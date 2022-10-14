@@ -121,10 +121,7 @@ global with sharing class BINGOController {
      * @return String
      */
     
-    public String getChooseRender() {
-        if (ApexPages.currentPage().getParameters().get('p') != null) return 'pdf';
-        else return null;
-    }
+    
     
     /**
      * Method showAsPDF navigates to the same Visualforce page, but flushes the cache and 
