@@ -21,8 +21,8 @@ jobs:
         if: github.event_name == 'push'
         uses: codescan-io/codescan-scanner-action@1.3
         with:
-          organization: ‘Enter organization key here’
-          projectKey: ‘Enter project key here’       
+          organization: ‘murali36529’
+          projectKey: ‘mutaliguttha-will-pet-store’    
           login: ${{ secrets.codescan_token }}
       - name: Run Codescan On PR
         if: github.event_name == 'pull_request'
