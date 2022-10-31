@@ -41,3 +41,7 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: codescan.sarif
+      - name: SonarQube Quality Gate check
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        with:
+          scanMetadataReportFile: target/sonar/report-task.txt
