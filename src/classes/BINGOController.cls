@@ -66,6 +66,7 @@ global with sharing class BINGOController {
         for(EntitySubscription es : [select Id, ParentId, SubscriberId  from EntitySubscription WHERE ParentId = :myid LIMIT :querylimit]){
             userids.add(es.SubscriberId);
         }
+        system.debug(myid);
         // Users I'm Following
         for(EntitySubscription es : [select Id, SubscriberId, ParentId  from EntitySubscription WHERE SubscriberId = :myid LIMIT :querylimit]){
             if( ('' + es.parentid).substring(0,3) == '005' ) // users only
