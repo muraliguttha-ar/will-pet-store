@@ -4,5 +4,5 @@
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
     <description>This page has a button to run all active Unfollow Rules</description>
-    <label>Enable Chatter Unfollow</label>
+    <label>Enable Chatter follow</label>
 </ApexPage>
