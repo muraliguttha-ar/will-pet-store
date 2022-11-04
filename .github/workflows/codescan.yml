@@ -46,17 +46,17 @@ jobs:
         with:
           name: codescan.sarif
           path: codescan.sarif
-      - name: Quality-gate-check          
-          if [[ ${qualityGateStatus} == "OK" ]]; then
-             set_output "quality-gate-status" "PASSED"
-             success "Quality Gate has PASSED."
-          elif [[ ${qualityGateStatus} == "WARN" ]]; then
-             set_output "quality-gate-status" "WARN"
-             warn "Warnings on Quality Gate."
-          elif [[ ${qualityGateStatus} == "ERROR" ]]; then
-             set_output "quality-gate-status" "FAILED"
-             fail "Quality Gate has FAILED."
-          else
-             set_output "quality-gate-status" "FAILED"
-             fail "Quality Gate not set for the project. Please configure the Quality Gate in SonarQube or remove sonarqube-quality-gate action from the workflow."
+      - name: Quality Gate Check
+        if: github.event_name == 'pull_request'
+        env:
+          TOKEN: ${{ secrets.codescan_token }}
+          PR_KEY: ${{github.event.number}}
+          PROJECT_KEY: cd-2933-test
+        run: |
+          qg_status=$(curl -s -u "$TOKEN": "https://app.codescan.io/api/qualitygates/project_status?projectKey=$PROJECT_KEY&pullRequest=$PR_KEY" | jq -r '.projectStatus.status')
+          echo "QG Script --> Quality Gate status is ${qg_status}"
+
+          if [ "${qg_status}" != "OK" ]; then
+            echo "QG Script --> Quality gate is not OK - exiting with error"
+            exit 1
           fi
