@@ -1,5 +1,5 @@
 /**
- * BingoController controls the BINGO page and both BINGO components.
+ * BingoController controls the BINGO page components.
  *
  * @author David Schach
  *
