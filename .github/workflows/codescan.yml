@@ -24,14 +24,14 @@ jobs:
         uses: codescan-io/codescan-scanner-action@1.3
         with:
           organization: murali36529
-          projectKey: cd-2933-test      
+          projectKey: cd-2933-test2      
           login: ${{ secrets.codescan_token }}
       - name: Run Codescan On PR
         if: github.event_name == 'pull_request'
         uses: codescan-io/codescan-scanner-action@1.3
         with:
           organization: murali36529
-          projectKey: cd-2933-test
+          projectKey: cd-2933-test2
           login: ${{ secrets.codescan_token }}
           args: |
             sonar.pullrequest.branch=${{github.head_ref}}
@@ -51,7 +51,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.codescan_token }}
           PR_KEY: ${{github.event.number}}
-          PROJECT_KEY: cd-2933-test
+          PROJECT_KEY: cd-2933-test2
         run: |
           qg_status=$(curl -s -u "$TOKEN": "https://app.codescan.io/api/qualitygates/project_status?projectKey=$PROJECT_KEY&pullRequest=$PR_KEY" | jq -r '.projectStatus.status')
           echo "QG Script --> Quality Gate status is ${qg_status}"
