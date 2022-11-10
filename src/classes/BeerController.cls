@@ -18,7 +18,7 @@ public with sharing class BeerController {
                       AND Alcohol__c >= :minAlcohol
                       ORDER BY NAME LIMIT 12 OFFSET :offset];
         System.debug(r);
-         
+        System.debug(key); 
         return r;
     }
 }
