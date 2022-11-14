@@ -33,6 +33,7 @@ jobs:
           organization: murali36529
           projectKey: mutaliguttha-patch-2
           login: ${{ secrets.codescan_token }}
+          generateSarifFile: true
           args: |
             sonar.pullrequest.branch=${{github.head_ref}}
             sonar.pullrequest.base=${{github.base_ref}}
