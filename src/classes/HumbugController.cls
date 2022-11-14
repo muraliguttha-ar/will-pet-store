@@ -10,6 +10,7 @@ public with sharing class HumbugController {
 				delete accounts[i];
 			}
 		}
+		System.debug(accountName); 
 		return new PageReference('/');
 	}
 }
