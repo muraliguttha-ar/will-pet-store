@@ -61,6 +61,7 @@ global with sharing class BINGOController {
   		});
         x = 2;
         myid = UserInfo.getUserId();
+        system.debug(myid);
         userids = new Set<Id>();
         // Users Following Me
         for(EntitySubscription es : [select Id, ParentId, SubscriberId  from EntitySubscription WHERE ParentId = :myid LIMIT :querylimit]){
