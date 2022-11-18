@@ -24,14 +24,14 @@ jobs:
         uses: codescan-io/codescan-scanner-action@1.3
         with:
           organization: murali36529
-          projectKey: mutaliguttha-patch-2      
+          projectKey: murali-pet-2      
           login: ${{ secrets.codescan_token }}
       - name: Run Codescan On PR
         if: github.event_name == 'pull_request'
         uses: codescan-io/codescan-scanner-action@1.3
         with:
           organization: murali36529
-          projectKey: mutaliguttha-patch-2
+          projectKey: murali-pet-2
           login: ${{ secrets.codescan_token }}
           generateSarifFile: true
           args: |
@@ -46,18 +46,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: codescan.sarif
-          path: codescan.sarif
-      - name: Quality Gate Check
-        if: github.event_name == 'pull_request'
-        env:
-          TOKEN: ${{ secrets.codescan_token }}
-          PR_KEY: ${{github.event.number}}
-          PROJECT_KEY: mutaliguttha-patch-2
-        run: |
-          qg_status=$(curl -s -u "$TOKEN": "https://app.codescan.io/api/qualitygates/project_status?projectKey=$PROJECT_KEY&pullRequest=$PR_KEY" | jq -r '.projectStatus.status')
-          echo "QG Script --> Quality Gate status is ${qg_status}"
-
-          if [ "${qg_status}" != "OK" ]; then
-            echo "QG Script --> Quality gate is not OK - exiting with error"
-            exit 1
-          fi
+          path: codescan.sarif     
