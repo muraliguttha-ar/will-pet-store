@@ -5,6 +5,7 @@ public with sharing class BeerController {
     public static PagedResult findAll(String searchKey, Decimal minAlcohol, Decimal pageNumber) {
         Integer pageSize = 12;
         String key = '%' + searchKey + '%';
+        System.debug(key);
         Integer offset = ((Integer)pageNumber - 1) * pageSize;
         
         PagedResult r =  new PagedResult();
