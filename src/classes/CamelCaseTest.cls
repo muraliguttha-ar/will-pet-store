@@ -7,7 +7,9 @@ public class CamelCaseTest {  //all wrong
     public void camelCaseTest(){
         NOT_CONSTANT++;
     }
-    
+       public void camelCaseTest(){
+        NOT_CONSTANT++;
+    }
     private void UPPERCASE(){
         //method empty on purpose
         NOT_CONSTANT++;
