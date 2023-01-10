@@ -17,6 +17,7 @@ global with sharing class BINGOController {
     public List<User> bingos {get; private set;}
     private List<User> allusers;
     private Set<Id> userids;
+    private admin admin{get;set;}
     public User me {get; set;}
     public User user1 {get; set;}
     public User user2 {get; set;}
@@ -120,10 +121,7 @@ global with sharing class BINGOController {
      * @return String
      */
     
-    public String getChooseRender() {
-        if (ApexPages.currentPage().getParameters().get('p') != null) return 'pdf';
-        else return null;
-    }
+    
     
     /**
      * Method showAsPDF navigates to the same Visualforce page, but flushes the cache and 
