@@ -21,14 +21,14 @@ jobs:
             restore-keys: ${{ runner.os }}-sonar
       - name: Run Codescan On Push
         if: github.event_name == 'push'
-        uses: mutaliguttha/codescan-scanner-action@v3
+        uses: mutaliguttha/codescan-scanner-action@v4
         with:
           organization: murali36529
           projectKey: pet-store-sarif-test      
           login: ${{ secrets.codescan_token }}
       - name: Run Codescan On PR
         if: github.event_name == 'pull_request'
-        uses: mutaliguttha/codescan-scanner-action@v3
+        uses: mutaliguttha/codescan-scanner-action@v4
         with:
           organization: murali36529
           projectKey: pet-store-sarif-test
