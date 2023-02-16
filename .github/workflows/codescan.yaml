@@ -21,17 +21,19 @@ jobs:
             restore-keys: ${{ runner.os }}-sonar
       - name: Run Codescan On Push
         if: github.event_name == 'push'
-        uses: codescan-io/codescan-scanner-action@t11
+        uses: codescan-io/codescan-scanner-action@1.3
         with:
-          organization: murali36529
-          projectKey: pet-store-sarif-test      
+          organization: murali67112
+          projectKey: mutaliguttha-will-pet-store
+          codeScanUrl: https://test.codescan.io/
           login: ${{ secrets.codescan_token }}
       - name: Run Codescan On PR
         if: github.event_name == 'pull_request'
-        uses: codescan-io/codescan-scanner-action@t11
+        uses: codescan-io/codescan-scanner-action@1.3
         with:
-          organization: murali36529
-          projectKey: pet-store-sarif-test
+          organization: murali67112
+          projectKey: mutaliguttha-will-pet-store
+          codeScanUrl: https://test.codescan.io/
           login: ${{ secrets.codescan_token }}
           generateSarifFile: true
           args: |
