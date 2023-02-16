@@ -36,7 +36,6 @@ jobs:
           projectKey: my-test-pipeline-1
           codeScanUrl: https://test.codescan.io/
           login: ${{ secrets.codescan_token }}
-          generateReportFile: true
           generateSarifFile: true
           args: |
             sonar.pullrequest.branch=${{github.head_ref}}
