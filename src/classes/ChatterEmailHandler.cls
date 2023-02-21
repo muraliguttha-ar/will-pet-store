@@ -87,7 +87,7 @@ global class ChatterEmailHandler implements Messaging.InboundEmailHandler {
                         f.ParentId = o.Id;
                         f.Type = 'TextPost';
                  } catch (Exception e) {
-                        errormessage ='Sorry, your chatter status has not been set.  We could not find an opportunity named: '+match;
+                        errormessage ='Sorry.  We could not find an opportunity named: '+match;
                     } 
                }
                
