@@ -25,7 +25,7 @@ jobs:
         with:
           organization: murali67112
           projectKey: my-test-pipeline-1
-          codeScanUrl: https://app.codescan.io/
+          codeScanUrl: https://test.codescan.io/
           login: ${{ secrets.codescan_token }}
           generateSarifFile: true
       - name: Run Codescan On PR
@@ -34,7 +34,7 @@ jobs:
         with:
           organization: murali67112
           projectKey: my-test-pipeline-1
-          codeScanUrl: https://app.codescan.io/
+          codeScanUrl: https://test.codescan.io/
           login: ${{ secrets.codescan_token }}
           generateSarifFile: true
           args: |
