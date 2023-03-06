@@ -21,7 +21,7 @@ jobs:
             restore-keys: ${{ runner.os }}-sonar
       - name: Run Codescan On Push
         if: github.event_name == 'push'
-        uses: codescan-io/codescan-scanner-action@t25
+        uses: codescan-io/codescan-scanner-action@t26
         with:
           organization: murali67112
           projectKey: my-test-pipeline-1
@@ -31,7 +31,7 @@ jobs:
           failPipeWhenRedQualityGate: true
       - name: Run Codescan On PR
         if: github.event_name == 'pull_request'
-        uses: codescan-io/codescan-scanner-action@t25
+        uses: codescan-io/codescan-scanner-action@t26
         with:
           organization: murali67112
           projectKey: my-test-pipeline-1
