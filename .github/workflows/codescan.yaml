@@ -38,6 +38,7 @@ jobs:
           codeScanUrl: https://test.codescan.io/
           login: ${{ secrets.codescan_token }}
           generateSarifFile: true
+          failPipeWhenRedQualityGate: true
           args: |
             sonar.pullrequest.branch=${{github.head_ref}}
             sonar.pullrequest.base=${{github.base_ref}}
