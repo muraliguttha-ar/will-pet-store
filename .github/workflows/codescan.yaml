@@ -27,7 +27,7 @@ jobs:
           projectKey: will-pet-store
           codeScanUrl: https://app-eu.codescan.io/
           login: ${{ secrets.codescan_token }}
-          generateSarifFile: true
+          generateSarifFile: false
           failOnRedQualityGate: false
       - name: Run Codescan On PR
         if: github.event_name == 'pull_request'
@@ -37,7 +37,7 @@ jobs:
           projectKey: will-pet-store
           codeScanUrl: https://app-eu.codescan.io/
           login: ${{ secrets.codescan_token }}
-          generateSarifFile: true
+          generateSarifFile: false
           failOnRedQualityGate: false
           args: |
             sonar.pullrequest.branch=${{github.head_ref}}
