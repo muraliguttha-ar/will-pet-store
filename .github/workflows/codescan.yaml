@@ -23,9 +23,9 @@ jobs:
         if: github.event_name == 'push'
         uses: codescan-io/codescan-scanner-action@1.4
         with:
-          organization: murali67112
-          projectKey: my-test-pipeline-1
-          codeScanUrl: https://test.codescan.io/
+          organization: murali20708
+          projectKey: will-pet-store
+          codeScanUrl: https://app-eu.codescan.io/
           login: ${{ secrets.codescan_token }}
           generateSarifFile: true
           failOnRedQualityGate: true
@@ -33,9 +33,9 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: codescan-io/codescan-scanner-action@1.4
         with:
-          organization: murali67112
-          projectKey: my-test-pipeline-1
-          codeScanUrl: https://test.codescan.io/
+          organization: murali20708
+          projectKey: will-pet-store
+          codeScanUrl: https://app-eu.codescan.io/
           login: ${{ secrets.codescan_token }}
           generateSarifFile: true
           failOnRedQualityGate: true
