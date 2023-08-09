@@ -27,7 +27,7 @@ jobs:
           projectKey: pet_test_prod_1
           codeScanUrl: https://app.codescan.io/
           login: ${{ secrets.codescan_token }}
-          generateSarifFile: true
+          generateSarifFile: false
       - name: Run Codescan On PR
         if: github.event_name == 'pull_request'
         uses: codescan-io/codescan-scanner-action@1.4
@@ -36,7 +36,7 @@ jobs:
           projectKey: pet_test_prod_1
           codeScanUrl: https://app.codescan.io/
           login: ${{ secrets.codescan_token }}
-          generateSarifFile: true
+          generateSarifFile: false
           args: |
             sonar.pullrequest.branch=${{github.head_ref}}
             sonar.pullrequest.base=${{github.base_ref}}
