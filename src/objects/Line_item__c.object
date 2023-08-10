@@ -56,6 +56,7 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <description>description</descaription>
         <fullName>Opportunity__c</fullName>
         <externalId>false</externalId>
         <label>Opportunity</label>
