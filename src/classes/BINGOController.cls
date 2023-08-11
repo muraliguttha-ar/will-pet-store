@@ -78,7 +78,6 @@ global with sharing class BINGOController {
         
         while(usedindices.size() < allusers.size() ){
             integer index =  math.round(Math.random()*(allusers.size()-1));
-            system.debug('INDEX VALUE: ' + index);
             if(!usedindices.contains(index)){
                 usedindices.add(index);
                 bingos.add(allusers[index]);
