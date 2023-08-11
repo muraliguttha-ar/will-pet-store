@@ -56,6 +56,7 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <description>descaription</description>
         <fullName>Line_item__c</fullName>
         <externalId>false</externalId>
         <label>Line item</label>
