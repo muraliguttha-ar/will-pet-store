@@ -23,8 +23,8 @@ jobs:
         if: github.event_name == 'push'
         uses: codescan-io/codescan-scanner-action@1.3
         with:
-          organization: murali20708
-          projectKey: will-pet-store
+          organization: tmp
+          projectKey: test-pr-1
           codeScanUrl: https://app-eu.codescan.io/
           login: ${{ secrets.codescan_token }}
           generateSarifFile: flase
@@ -32,8 +32,8 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: codescan-io/codescan-scanner-action@1.3
         with:
-          organization: murali20708
-          projectKey: will-pet-store
+          organization: tmp
+          projectKey: test-pr-1
           codeScanUrl: https://app-eu.codescan.io/
           login: ${{ secrets.codescan_token }}
           generateSarifFile: flase
