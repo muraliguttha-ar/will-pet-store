@@ -45,7 +45,7 @@ global with sharing class BINGOController {
     public User user24 {get; set;}
     public User user25 {get; set;}
     
-    //public List<User> bingousers {get; set;}
+    
     
     private static final integer totalsquares = 25;
     
