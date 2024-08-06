@@ -36,7 +36,7 @@ jobs:
           projectKey: will-pet-store_1
           codeScanUrl: https://preview.codescan.io
           login: ${{ secrets.codescan_token }}
-          generateSarifFile: false
+          generateSarifFile: true
           args: |
             sonar.pullrequest.branch=${{github.head_ref}}
             sonar.pullrequest.base=${{github.base_ref}}
